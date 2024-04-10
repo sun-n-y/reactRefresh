@@ -1,5 +1,19 @@
 const ErrorExample = () => {
-  return <h2>useState error example</h2>;
+  let count = 0;
+
+  return (
+    <>
+      <h4>{count}</h4>
+      <button
+        onClick={() => {
+          count++;
+          console.log(count);
+        }}
+      >
+        Increase count
+      </button>
+    </>
+  );
 };
 
 export default ErrorExample;
