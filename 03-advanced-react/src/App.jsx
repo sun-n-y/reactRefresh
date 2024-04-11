@@ -1,4 +1,4 @@
-import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data';
+import Starter from './tutorial/02-useEffect/starter/05-cleanup-function';
 
 function App() {
   return (

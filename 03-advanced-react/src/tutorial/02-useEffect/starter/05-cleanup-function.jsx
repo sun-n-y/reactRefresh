@@ -1,5 +1,29 @@
+import { useEffect } from 'react';
+import { useState } from 'react';
+
 const CleanupFunction = () => {
-  return <h2>cleanup function</h2>;
+  const [toggle, setToggle] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setToggle(!toggle)}>
+        {toggle ? 'hide' : 'show'}
+      </button>
+      {toggle && <SecondComponent />}
+    </>
+  );
+};
+
+const SecondComponent = () => {
+  useEffect(() => {
+    const someFunc = () => {};
+    window.addEventListener('scroll', someFunc);
+    return () => {
+      window.removeEventListener('scroll', someFunc);
+    };
+  }, []);
+
+  return <h2>simple return</h2>;
 };
 
 export default CleanupFunction;
