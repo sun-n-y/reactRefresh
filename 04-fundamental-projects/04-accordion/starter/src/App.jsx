@@ -1,4 +1,19 @@
+import { useState } from 'react';
+import list from './data';
+import SingleQuestion from './SingleQuestion';
+
 const App = () => {
-  return <h2>Accordion Starter</h2>;
+  const [questions, setQuestions] = useState(list);
+
+  return (
+    <main>
+      <div className="container">
+        <h1>Questions</h1>
+        {list.map((item) => {
+          return <SingleQuestion key={item.id} {...item} />;
+        })}
+      </div>
+    </main>
+  );
 };
 export default App;
