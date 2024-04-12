@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Tour = (props) => {
-  const [readMore, setReadMore] = useState(true);
+  const [readMore, setReadMore] = useState(false);
 
   const { id, name, info, image, price, removeTour } = props;
 
@@ -12,7 +12,7 @@ const Tour = (props) => {
       <div className="tour-info">
         <h5>{name}</h5>
         <p>
-          {readMore ? info : `${info.slice(0, 250)}`}
+          {readMore ? info : `${info.slice(0, 250)}...`}
           <button onClick={() => setReadMore(!readMore)}>
             {readMore ? 'read less' : 'read more'}
           </button>
