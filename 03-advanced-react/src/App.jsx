@@ -1,11 +1,9 @@
-import List from './tutorial/05-leverage-javascript/starter/List';
-import Person from './tutorial/05-leverage-javascript/starter/Person';
+import Starter from './tutorial/06-forms/starter/02-user-challenge';
 
 function App() {
   return (
     <div className="container">
-      <List />
-      <Person />
+      <Starter />
     </div>
   );
 }
