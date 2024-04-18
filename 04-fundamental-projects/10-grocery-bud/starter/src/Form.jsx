@@ -11,6 +11,7 @@ const Form = ({ items, setItems }) => {
     }
     const groceryItem = { id: nanoid(), name: inputValue, completed: false };
     setItems([...items, groceryItem]);
+    localStorage.setItem('items', JSON.stringify([...items, groceryItem]));
     e.currentTarget.reset();
   };
 
