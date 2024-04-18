@@ -10,12 +10,13 @@ const App = () => {
   const removeItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);
     setItems(newItems);
+    localStorage.setItem('items', JSON.stringify(newItems));
   };
 
   return (
     <>
       <Form setItems={setItems} items={items} />
-      <Items items={items} removeItem={removeItem} setItems={setItems} />
+      <Items items={items} removeItem={removeItem} />
     </>
   );
 };
