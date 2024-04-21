@@ -1,4 +1,4 @@
-import Starter from './tutorial/07-useRef/starter/01-useRef-basics';
+import Starter from './tutorial/09-context-api/starter/';
 
 function App() {
   return (
