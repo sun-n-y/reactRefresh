@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fa';
 import { nanoid } from 'nanoid';
 
-const sublinks = [
+const subLinks = [
   {
     pageId: nanoid(),
     page: 'product',
@@ -86,4 +86,4 @@ const sublinks = [
   },
 ];
 
-export default sublinks;
+export default subLinks;
