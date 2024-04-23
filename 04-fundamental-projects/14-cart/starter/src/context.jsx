@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 import reducer from './reducer';
 import {
   INCREASE,
@@ -10,12 +10,13 @@ import {
 } from './actions';
 import cartItems from './data';
 import { getTotals } from './utils';
+const url = 'https://www.course-api.com/react-useReducer-cart-project';
 
 const GlobalContext = createContext();
 
 const defaultState = {
   loading: false,
-  cart: new Map(cartItems.map((item) => [item.id, item])),
+  cart: new Map(),
 };
 
 const AppContext = ({ children }) => {
@@ -38,6 +39,17 @@ const AppContext = ({ children }) => {
   const decreaseItem = (id) => {
     dispatch({ type: DECREASE, payload: { id } });
   };
+
+  const fetchData = async () => {
+    dispatch({ type: LOADING });
+    const response = await fetch(url);
+    const cart = await response.json();
+    dispatch({ type: DISPLAY_ITEMS, payload: { cart } });
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <GlobalContext.Provider
