@@ -3,13 +3,14 @@ import { useState } from 'react';
 const newItems = Array.from({ length: 5000 }, (_, index) => {
   return (
     <div key={index}>
-      <img src='/vite.svg' alt='' />
+      <img src="/vite.svg" alt="" />
     </div>
   );
 });
 
 const SlowComponent = () => {
   const [items, setItems] = useState(newItems);
+
   return (
     <div
       style={{
@@ -22,4 +23,5 @@ const SlowComponent = () => {
     </div>
   );
 };
+
 export default SlowComponent;
