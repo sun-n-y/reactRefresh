@@ -1,4 +1,5 @@
 const Person = ({ name }) => {
+  console.log('re-render');
   return (
     <div>
       <h4>{name}</h4>
